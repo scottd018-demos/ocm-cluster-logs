@@ -1,0 +1,4 @@
+boto3
+dateparser
+requests
+requests_oauthlib
