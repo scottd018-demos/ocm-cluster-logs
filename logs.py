@@ -50,16 +50,6 @@ def get_cluster(session):
 
     return None
 
-def get_logs(session, cluster_id):
-    response = session.get(API + "/clusters/" + cluster_id + "/logs")
-    if DEBUG:
-        pp.pprint(response.json())
-    for cluster in response.json()['items']:
-        if cluster['name'] == CLUSTER_NAME:
-            return cluster
-
-    return None
-
 # get list of clusters
 iam = boto3.client('iam')
 session = requests.Session()
